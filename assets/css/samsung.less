@@ -1,0 +1,339 @@
+@font-face {
+  font-family: 'Samsung Interface';
+  src: url('@{fontPath}samsung-interface-bf4eccc7bbe5fa58813c8df3ea94570a.eot');
+  src: url('@{fontPath}samsung-interface.eot?#iefix') format("embedded-opentype"), url('@{fontPath}samsung-interface-fd58679acd6271050d2659730bf0543d.woff2') format("woff2"), url('@{fontPath}samsung-interface-c64b32c8df9d31014784e251f829bbb3.woff') format("woff"), url('@{fontPath}samsung-interface-1316002571912baa534ea3283755380b.ttf') format("truetype"), url('@{fontPath}samsung-interface.svg#samsung_interfaceregular') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@fontPath: '//assets1-new.akamai.coub.com/assets/samsung/';
+@c-samsung-back: #000;
+@c-samsung-text: #d8d8d8;
+@back-padding-scale: 0.5;
+@back-tablet-scale: 141/130;
+@samsung-scale: 0.9;
+@persent-pad: 6.2%;
+.samsung-font() {
+	font-family: 'Samsung Interface';
+}
+body.samsung {
+	background-color: @c-samsung-back;
+	color: @c-samsung-text;
+	background-image: url('//assets1-new.akamai.coub.com/assets/profile/promo/samsung/bg-39a1f4030e4157e5ede0d823b200154e.jpg');
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	@media (max-width: 1120px) {
+		background-size: 130%;
+	}
+	@media (max-width: @brpnt2) {
+		background-size: @back-tablet-scale*130%;
+	}
+	.samsung-font();
+
+	.header {
+		padding-left: @persent-pad;
+		padding-right: @persent-pad;
+		@media (max-width: @brpnt2) {
+			padding-left: @back-padding-scale*@persent-pad;
+			padding-right: @back-padding-scale*@persent-pad;
+		}
+	}
+}
+.samsung-phone() {
+	left: 0;
+	right: 0;
+	width: 100%;
+	padding: 0 @pad*.5;
+	position: static !important;
+	p, div {
+		text-shadow: 0 1px 5px #000, 0 -1px 5px #000;
+	}
+}
+.samsung_promo {
+	color: @c-samsung-text;
+	margin-top: -@headerHeight;
+	padding: 1/@samsung-scale*70% 50%;
+	position: relative;
+	@media (max-width: @brpnt3) {
+		.gradient(rgba(0, 0,0, .3),rgba(0,0,0,1.0));
+		padding: @pad*12 0 0;
+	}
+	@media (max-width: @brpnt2) {
+		font-size: 90%;
+	}
+	> div {
+		position: absolute;
+	}
+	&-model {
+		top: @samsung-scale*12%;
+		right: @persent-pad;
+		width: 23.5%;
+		@media (max-width: @brpnt2) {
+			top: @back-tablet-scale*@samsung-scale*12%;
+			right: @back-padding-scale*@persent-pad;
+			width: 25%;
+		}
+		div {
+			font-size: 110%;
+		}
+		p {
+			margin: 0;
+			line-height: 120%;
+			font-size: 70%;
+			@media (max-width: 640px) {
+				display: none;
+			}
+		}
+		@media (max-width: @brpnt3) {
+			display: none;
+		}
+	}
+	&-button {
+		@media (max-width: @brpnt3) {
+			display: block !important;
+			margin: @pad/2 0 @pad*2;
+		}
+	}
+	&-follow {
+		right: 50%;
+		top: @samsung-scale*40%;
+		left: @persent-pad;
+		@media (max-width: @brpnt2) {
+			top: @back-tablet-scale*@samsung-scale*40%;
+			left: @back-padding-scale*@persent-pad;
+		}
+		ul {
+			li {
+				vertical-align: middle;
+				margin-right: @pad;
+			}
+		}
+		@media (max-width: @brpnt3) {
+			.samsung-phone();
+		}
+	}
+	&-share {
+		top: @samsung-scale*45%;
+		right: 35%;
+		left: @persent-pad;
+		@media (max-width: @brpnt2) {
+			top: @back-tablet-scale*@samsung-scale*45%;
+			left: @back-padding-scale*@persent-pad;
+		}
+		@media (max-width: @brpnt3) {
+			.samsung-phone();
+			a {
+				.xs;
+				margin-right: 0.1rem;
+				.light;
+			}
+		}
+	}
+	&-desc {
+		top: @samsung-scale*52%;
+		right: 55%;
+		z-index: 2;
+		left: @persent-pad;
+		font-size: 140%;
+		@media (max-width: @brpnt2) {
+			top: @back-tablet-scale*@samsung-scale*52%;
+			left: @back-padding-scale*@persent-pad;
+		}
+		@media (max-width: @brpnt1) {
+			font-size: 120%;
+			right: 47%;
+		}
+		@media (max-width: @brpnt3) {
+			font-size: 112.5%;
+		}
+		@media (max-width: @brpnt-tablet) {
+			font-size: 100%;
+		}
+		b {
+			font-size: 120%;
+		}
+		a {
+			color: @c-samsung-text;
+		}
+		@media (max-width: @brpnt3) {
+			.samsung-phone();
+		}
+	}
+	&-support {
+		right: 64%;
+		bottom: @samsung-scale*95.2%;
+		@media (max-width: @brpnt3) {
+			display: none;
+		}
+	}
+	&-phones {
+		top: @samsung-scale*86%;
+		left: 58.5%;
+		right: 6%;
+		font-size: 87.5%;
+		color: @c-back;
+		background-color: transparent;
+		.transitions();
+		li {
+			padding-left: @pad;
+			text-align: right;
+		}
+		@media (max-width: @brpnt2) {
+			top: @back-tablet-scale*@samsung-scale*86%;
+			right: @back-padding-scale*6%;
+		}
+		@media (max-width: 1040px) {
+			background-color: @c-samsung-back;
+			.translate3d(0, -90%);
+			right: 5%;
+			@media (max-width: @brpnt2) {
+				right: @back-padding-scale*5%;
+			}
+			color: @c-samsung-text;
+			padding-right: @pad;
+			font-size: 112.5%;
+			li {
+				display: block !important;
+				width: 100% !important;
+				&::before {
+					content: '—';
+					position: absolute;
+					left: -@pad/2;
+				}
+				text-align: left;	
+				margin: @pad/4 0;
+			}
+		}
+		@media (max-width: @brpnt3) {
+			display: none
+		}
+	}
+	&-phones-info {
+		top: @samsung-scale*90%;
+		left: 56%;
+		right: @persent-pad;
+		font-size: 120%;
+		display: none;
+		@media (max-width: @brpnt1) {
+			font-size: 112.5%;
+		}
+		@media (max-width: @brpnt2) {
+			top: @back-tablet-scale*@samsung-scale*90%;
+			right: @back-padding-scale*@persent-pad;
+			font-size: 87.5%;
+		}
+		@media (min-width: @brpnt-tablet) {
+			display: block;
+		}
+		p {
+			font-size: inherit;
+			text-align: justify;
+			text-indent: 2em;
+			color: darken(@c-samsung-text,10%);
+		}
+		@media (max-width: 1040px) {
+			.translate3d(0, -10%);
+		}
+	}
+	&-follow__counter {
+		.bold;
+		color: @c-back;
+		span {
+			font-size: 200%;
+		}
+		p {
+			margin: 0;
+		}
+	}
+	&-share__header {
+		text-transform: uppercase;
+		font-size: 70%;
+		letter-spacing: 0.1rem;
+		margin: @pad/2 0;
+	}
+	&-footer {
+		text-align: center;
+		margin-bottom: @pad*2;
+		h4 {
+			.light;
+		}
+		a {
+			display: inline-block;
+			width: @pad*2.6;
+			height: @pad*2.6;
+			.xxl;
+			line-height: @pad*2.6;
+			border-radius: @pad/4;
+			margin: 0 0.4rem;
+			&.vkontakte {
+				background-color: #D8D8D8;
+				color: @c-text;
+				&::before {
+					.icon-vk;
+				}
+			}
+			&.facebook {
+				box-shadow: inset 0 0.4rem 0 0 #D8D8D8, inset -0.4rem 0 0 0 #D8D8D8, inset 0.4rem 0 0 0 #D8D8D8;
+				&::before {
+					.icon-facebook;
+					font-size: @pad*2.6;
+				}
+			}
+			&.twitter {
+				&::before {
+					.icon-twitter;
+					font-size: @pad*2;
+				}
+			}
+			&::before {
+				font-size: @pad*2;
+				vertical-align: middle;
+				.icon-font;
+			}
+		}
+	}
+}
+.samsung_coubs {
+	padding: 0 @persent-pad 0 @persent-pad;
+		@media (max-width: @brpnt2) {
+			padding: 0 @persent-pad*@back-padding-scale 0 @persent-pad*@back-padding-scale;
+		}
+}
+.button_samsung {
+	border-radius: @pad/4;
+	margin-right: @pad/2;
+	color: @c-back;
+	position: relative;
+	line-height: @pad*1.5;
+	.icon();
+	span {
+		font-size: 80%;
+		vertical-align: middle;
+		display: inline-block;
+	}
+	&::before {
+		vertical-align: middle;
+		display: inline-block;
+		font-size: 120%;
+	}
+	&-vk {
+		background-color: #577DA2;
+		&::before {
+			margin-right: @pad/2;
+			.icon-vk;
+		}
+	}
+	&-fb {
+		background-color: #3B5A97;
+		&::before {
+			margin-right: @pad/2;
+			.icon-facebook;
+		}
+	}
+	&-tw {
+		background-color: #54D4FB;
+		&::before {
+			.icon-twitter;
+		}
+	}
+}

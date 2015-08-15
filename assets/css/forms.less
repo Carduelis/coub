@@ -1,0 +1,38 @@
+#form {
+	background: @color-back;
+	padding: @pad;
+}
+.select-wrapper {
+	margin: @pad;
+}
+ul.select {
+	.no-list;
+	border: 1px solid @color-txt-grey;
+	li {
+		cursor: pointer;
+		padding: @pad/2;
+		position: relative;
+		display: block;
+		border-bottom: 1px solid @color-txt-grey;
+		&:last-of-type {
+			border-bottom: none;
+		}
+		&.selected {
+			color: @color-txt-grey;
+		}
+		&.selected::after {
+			position: absolute;
+			width: @icon-size;
+			.origin(50% 50%);
+			height: @icon-size;
+			display: block;
+			content: '';
+			right: @pad/2;
+			top: 50%;
+			margin-top: -@icon-size/2;
+			.image-2x('./assets/icons/Tick@2x.png', @icon-size, @icon-size);
+			background-position: 50%;
+			background-size: 100%;
+		}
+	}
+}

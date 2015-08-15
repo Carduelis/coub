@@ -1,0 +1,298 @@
+<!doctype html>
+<html ng-app="test" ng-controller="mobileDetect" class="{{_isNotMobile}}" >
+ <head>
+
+	<script src="assets/js/angular.js"></script>
+	<script src="assets/js/common.js"></script>
+ 	<meta charset="utf-8">
+    <title>Full Metal Coub</title>
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="keywords" content="Coub Samsung">
+    <meta name="author" content="Щеголев Павел">
+    <meta name="description" content="Full Metal Coub">
+    <meta name="HandheldFriendly" content="Full Metal Coub">
+    <meta name="format-detection" content="telephone=no">
+
+
+	<meta name="MobileOptimized" content="320">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-title" content="Full Metal Coub">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta http-equiv="msthemecompatible" content="no">
+	<meta http-equiv="cleartype" content="on">
+
+<link rel="apple-touch-icon" sizes="57x57" href="assets/generated-favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="assets/generated-favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="assets/generated-favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="assets/generated-favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="assets/generated-favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="assets/generated-favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="assets/generated-favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/generated-favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/generated-favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="assets/generated-favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/generated-favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="assets/generated-favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="assets/generated-favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="assets/generated-favicons/manifest.json">
+<link rel="shortcut icon" href="assets/generated-favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#0013ff">
+<meta name="msapplication-TileImage" content="assets/generated-favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="assets/generated-favicons/browserconfig.xml">
+<meta name="theme-color" content="#222222">
+
+    <!--realtime less compiler
+	<link rel="stylesheet/less" type="text/css" href="assets/css/style.less">
+	<script type="text/javascript">
+		less = {
+			env: "development"
+		};
+	</script>
+    <script type="text/javascript">less.watch();</script> 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js"></script>
+	-->
+    <link rel="stylesheet" href="assets/css/style.css?1-4">
+	</head>
+	<body class="samsung" ng-switch on="showHide" ng-class="{{showHide}}" ng-controller="sidebar" ng-switch on="showHide">
+		<div class="mobile-only sidebar" id="navigation"  ng-class="{{showHide}}">
+			<nav>
+				<ul>
+					<li><a><span>Channels</span></a>
+					<li><a><span>Feautured</span></a>
+					<li><a><span>Log in</span></a>
+					<li><a><span>Sign up</span></a>
+					<li><a><span>Create</span></a>
+				</ul>
+			</nav>
+		</div>
+		<div ng-click="hide()" id='overlay'></div>
+		<div class="page_wrapper">
+			<header class="header">
+				<ul class="line">
+					<li class="mobile-menu">
+						<a class="button_icon button_icon-menu" ng-click="show()"></a>
+					<li class="logo">
+						<a href="/">
+							<img class="white" height="29" src="http://assets1-new.akamai.coub.com/assets/logo-white-e21c0a3426accd3b1d757dbbba328df8.png" srcset="http://assets1-new.akamai.coub.com/assets/logo-white-e21c0a3426accd3b1d757dbbba328df8.png 1x, http://assets0-new.akamai.coub.com/assets/logo-white@2x-9f95ce8db03bf19001fd50e335e23b2c.png 2x" width="150">
+						</a>
+					<li class="search">
+						<form accept-charset="UTF-8" action="/search" method="get">
+							<input id="q" name="q" placeholder="Search" type="text" value="">
+							<a class="button_icon button_icon-search"></a>
+						</form>
+					<li class="links">
+						<ul class="line">
+							<li>
+								<a class="button button-transparent button_icon button_icon-star"><span>Featured</span></a>
+							<li>
+								<a class="button button-transparent button_icon button_icon-hot"><span>Popular</span></a>
+						</ul>
+					<li class="links links-enter">
+						<ul class="line">
+							<li>
+								<a class="link link-white">Sign up</a>
+							<li>
+								<a class="link link-white">Log in</a>
+							<li>
+								<a class="button button_icon button_white button_icon-create"><span>Create</span></a>
+						</ul>
+				</ul>
+			</header>
+			<section class="samsung_promo">
+				<div class="samsung_promo-support">
+					<p>При поддержке</p>
+					<img src="http://assets0-new.akamai.coub.com/assets/profile/promo/samsung/samsung_logo-b2ecda2d49618e7c2a790d936c178e4e.png" srcset="http://assets0-new.akamai.coub.com/assets/profile/promo/samsung/samsung_logo-b2ecda2d49618e7c2a790d936c178e4e.png 1x, http://assets0-new.akamai.coub.com/assets/profile/promo/samsung/samsung_logo@2x-84692565fdd11e7cf69341c9612efafa.png 2x" width="image">
+				</div>
+				<div class="samsung_promo-model">
+					<div>Виктор Ан</div>
+					<p>Шестикратный олимпийский чемпион по шорт&#8209;треку<span class="secondary">, показавший всему миру, что такое железная воля</span>.</p>
+					<p>Официальное лицо рекламной компании Samsung&nbsp;GALAXY&nbsp;A в Росcии.</p>
+					<a href="http://youtu.be/fJ6sN-0aP8Y" target="_blank" type="embedPopup"></a>
+				</div>
+				<div class="samsung_promo-follow">
+					<ul class="line">
+						<li class="samsung_promo-follow__counter">
+							<p><span counter-value="">278</span> Followers
+						<li class="samsung_promo-button">
+							<a class="button button_icon button_icon-follow"><span>Follow</span></a>
+					</ul>
+				</div>
+				<div class="samsung_promo-share">
+					<div class="samsung_promo-share__header">Расскажите про конкурс друзьям:</div>
+					<ul class="line samsung_promo-share__buttons">
+						<li><a class="button button_samsung button_samsung-vk"><span>Share on Vkontakte</span></a>
+						<li><a class="button button_samsung button_samsung-fb"><span>Facebook</span></a>
+						<li><a class="button button_samsung button_samsung-tw"></a>
+					</ul>
+				</div>
+				<div class="samsung_promo-desc">
+					<p>Что такое металлический коб? Это коб, которым можно вскрыть консервную банку: дерзкий, громкий и острый, как коньки Виктора Ана.</p>
+					<p>Конкурс на самый металлический коуб завершен.
+						<br>В железной схватке за три новых
+						<br>Samsung&nbsp;GALAXY&nbsp;A победили:
+					<p><b>1 место:</b>
+						<br><a href="/andrey-korneev" target="_blank">Andrey Korneev</a>
+						<br><a href="/view/5hckl" target="_blank">True metal kids #fullmetal</a>
+					<p><b>2 место:</b>
+						<br><a href="/andrei.mayakov" target="_blank">Андрей Маяков</a>
+						<br><a href="/view/5hz97" target="_blank">Heaviest melody #fullmetal #ЖаждаПеремен #GalaxyA</a>
+					<p><b>3 место:</b>
+						<br><a href="/yamacoub" target="_blank">YamaCoub</a>
+						<br><a href="/view/5l7k4" target="_blank">Dr.Ryan Stone vs Kin dza dza #fullmetal</a>
+					<p>Спасибо за ваши коубы &mdash; это был рок!</p>
+					<img alt="Getcode?p1=brkor&amp;p2=v&amp;pe=b&amp;pfc=babsp&amp;pfb=cstqr&amp;pr=eqbrfrj" src="http://ads.adfox.ru/214153/getCode?p1=brkor&amp;p2=v&amp;pe=b&amp;pfc=babsp&amp;pfb=cstqr&amp;pr=eqbrfrj" style="position: absolute; left: -9999px; top: -9999px;">
+					<img alt="Getcode?p1=brkor&amp;p2=v&amp;pe=b&amp;pfc=babsp&amp;pfb=cstqq&amp;pr=eqbrfjn" src="http://ads.adfox.ru/214153/getCode?p1=brkor&amp;p2=v&amp;pe=b&amp;pfc=babsp&amp;pfb=cstqq&amp;pr=eqbrfjn" style="position: absolute; left: -9999px; top: -9999px;">
+					<div class="samsung_promo-desc__rules">
+						<a href="/promo/rules/samsung.pdf" target="_blank">Полные правила конкурса</a>
+					</div>
+					<a href="/create" class="sb -st -rn -hidden">Сделать coub</a>
+				</div>
+				<div class="samsung_promo-phones">
+					<ul class="line">
+						<li class="col3">Широко&shy;угольное селфи/5Мп
+						<li class="col3">Яркий Super&shy;AMOLED экран
+						<li class="col3">Универ&shy;сальный слотSIM + SIM/SIM + microSD
+					</ul>
+				</div>
+				<div class="samsung_promo-phones-info secondary">
+					<p>
+					Впервые смартфон Samsung в цельно&shy;металли&shy;ческом корпусе, плюс к этому такой тонкий и эрго&shy;номичный. Ты можешь оста&shy;новить свой выбор на дизайне, который подходит именно тебе &mdash; модели А3, А5 и А7 раз&shy;личаются раз&shy;мерами и цветовыми реше&shy;ниями. Элегантный серебрис&shy;тый и золотис&shy;тый цвета, чистый белый или иссиня-черный &mdash; выбирать тебе.
+					<div class="samsung_promo-phones-info__more">
+						<a class="button button-center" href="http://ads.adfox.ru/214153/goLink?p1=brkor&amp;p2=v&amp;p5=csteo&amp;pr=123" target="_blank">Узнать больше</a>
+						<img alt="Getcode?p1=brkor&amp;p2=v&amp;pe=b&amp;pfc=babsp&amp;pfb=csteo&amp;pr=eqbqpwh" src="http://ads.adfox.ru/214153/getCode?p1=brkor&amp;p2=v&amp;pe=b&amp;pfc=babsp&amp;pfb=csteo&amp;pr=eqbqpwh" style="position: absolute; left: -9999px; top: -9999px;">
+					</div>
+				</div>
+			</section>
+			<section class="coubs samsung_coubs">
+
+
+			<div ng-controller="switcher">
+			   <div ng-switch on="viewVariants"> 
+							<ul class="line coubs_header">
+								<li class="coubs_header-text">
+									<div>Кобы участников конкурса</div>
+								<li class="coubs_header-switch">
+									<ul class="line {{viewVariants}}">
+										<li><a ng-click="list()" class="button button-small_radius button_icon button_icon-list"></a>
+										<li><a ng-click="grid()" class="button button-small_radius button_icon button_icon-grid"></a>
+									</ul>
+								<li class="coubs_header-sort">
+									<div class="select">
+										<a class="button button-small_radius button_icon_after button_icon-caret_down"><span>Newest</span></a>
+										<ul class="select_list" hidden>
+											<li><a class="selected">Newest</a>
+											<li><a>Most liked</a>
+											<li><a>Most viewed</a>
+										</ul>
+									</div>
+							</ul>
+								<ul class="coubs_{{viewVariants}}" ng-controller="CoubsCtrl">
+								    <li class="coub" ng-repeat="coub in coubs">
+										<div class="coub_player">
+											<img class="coub_player-image" ng-src={{coub.picture}}>
+											<a class="coub_player-link"><span class="coub_player-link-icon"></span></a>
+										</div>
+										<div class="coub_info">
+											<ul class="line coub_info-top">
+												<li class="coub_info-header_holder">
+													<h4 class="coub_info-header">
+														<a ng-href="{{coub.permalink}}">{{coub.title}}</a>
+													</h4>
+												<li class="coub_info-icon_holder">
+													<div class="coub_icon">
+														<a class="coub_icon-icon icon-recoub"></a>
+														<span class="coub_icon-count">{{coub.recoubs_count}}</span>
+														<span class="coub_icon-hint">Recoub</span>
+													</div>
+												<li class="coub_info-icon_holder">
+													<div class="coub_icon">
+														<a class="coub_icon-icon icon-like"></a>
+														<span class="coub_icon-count">{{coub.likes_count}}</span>
+														<span class="coub_icon-hint">Like</span>
+													</div>
+											</ul>
+											<ul class="line coub_info-bottom">
+												<li>
+													<h5 class="coub_info-user">
+														<a class="button_image button_image-small" ng-href="{{coub.recoub_to.channel.permalink}}">
+															<img ng-src={{coub.media_blocks.audio_track.image}}>
+														</a>
+														<a class="coub_info-user-text" ng-href="{{coub.recoub_to.channel.permalink}}">{{coub.recoub_to.channel.title}}</a>
+													</h5>
+												<li class="sep sep-dot">
+												<li>
+													<div class="coub_date">
+														<span class="date-value">{{coub.created_at | date:'MMM d'}}</span>
+													</div>
+												<li class="sep sep-dot">
+												<li>
+													<div class="coub_music">
+														<a class="coub_music-icon"></a>
+														<a class="coub_music-title">{{coub.media_blocks.audio_track.title}}</a>
+													</div>
+												<li class="sep sep-dot">
+												<li>
+													<div class="coub_view">
+														<span class="coub_view-counter">{{coub.views_count}} views</span>
+													</div>
+											</ul>
+										</div>
+										<div class="coub_socio" ng-switch-when="list">
+											<ul class="line samsung_promo-share__buttons">
+												<li><a class="button button_samsung button_samsung-vk"><span>Share on Vkontakte</span></a>
+												<li><a class="button button_samsung button_samsung-fb"><span>Facebook</span></a>
+												<li><a class="button button_samsung button_samsung-tw"></a>
+											</ul>
+										</div>
+							  </ul>
+							</div>
+			   </div>
+			</div>
+			</section>
+
+		<div class="samsung_promo-footer">
+		<h4>Расскажи друзьям</h4>
+		<a class="-big -sq box--inline sb social vkontakte" custom-sharing-button="" data-custom-sharing="vkontakte" data-encoded-title="Full%20Metal%20Coub" data-url="http://coub.com/galaxy-a"></a>
+		<a class="-big -sq box--inline facebook sb social" custom-sharing-button="" data-custom-sharing="facebook" data-encoded-title="Full%20Metal%20Coub" data-url="http://coub.com/galaxy-a"></a>
+		<a class="-big -sq box--inline sb social twitter" custom-sharing-button="" data-custom-sharing="twitter" data-encoded-title="Full%20Metal%20Coub" data-url="http://coub.com/galaxy-a"></a>
+		</div>	
+		<footer class="-full footer">
+		<nav class="footer__nav">
+		<ul class="line">
+		<li>
+		<a href="/about" class="-undr">What is Coub?</a>
+		<li>
+		<a href="/new-editor" class="-undr">How To</a>
+		<li>
+		<a href="/howtochannels" class="-undr">Channels</a>
+		<li>
+		<a href="/media" class="-undr">Media</a>
+		<li>
+		<a href="http://blog.coub.com" class="-undr">Blog</a>
+		<li>
+		<a href="/tos" class="-undr">Terms of service</a>
+		<li>
+		<a href="mailto:advertise@coub.com" class="-undr">Advertise</a>
+		<li>
+		<a href="/apps" class="-undr">Apps</a>
+		<li>
+		<a href="/brand-assets" class="-undr">Brand</a>
+		<li>
+		<a href="/dev/docs" class="-undr">Developers</a>
+		<li>
+		<a href="/help/faq" class="-undr">Help</a>
+		</ul>
+		</nav>
+			<div class="footer__copyright">
+			©&nbsp;2012—2015&nbsp;Coub&nbsp; <span class="middot"></span> &nbsp;<a href="mailto:contact@coub.com" class="-undr">contact@coub.com</a>
+			</div>
+		</footer>
+		</div> <!-- end of .page_wrapper -->
+	</body>
+</html>
+
+
